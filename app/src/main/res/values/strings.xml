@@ -2,5 +2,5 @@
     <string name="app_name">Seguridad Universitaria</string>
 
     <string name="API">http://148.202.152.33/</string>
-    <string name="API_Login">incidencias/login.php</string>
+    <string name="API_Login">incidencias/login.php?mobile=true</string>
 </resources>

@@ -22,7 +22,9 @@ class LoginActivity : AppCompatActivity() {
             login_layout_linear_loginform.visibility = View.GONE
             login_progress_loadinglogin.visibility = View.VISIBLE
             doAsync {
-                val result = URL("148.202.152.33").readText()
+                val url = getString(R.string.API).plus(getString(R.string.API_Login))
+                Log.d("LOGIN",url)
+                val result = URL(url).readText()
                 uiThread {
                     login_progress_loadinglogin.visibility = View.GONE
                     login_layout_linear_loginform.visibility = View.VISIBLE
