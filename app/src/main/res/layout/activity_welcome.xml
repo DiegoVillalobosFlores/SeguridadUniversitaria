@@ -18,6 +18,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
+                android:layout_margin="16dp"
                 android:src="@drawable/isotipo"/>
             <TextView
                 android:layout_width="match_parent"
@@ -26,31 +27,33 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:gravity="center"
                 android:textColor="#0D263A"
-                android:textSize="40sp"/>
+                android:textSize="30sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="NOMBRE"
                 android:gravity="center"
                 android:layout_marginTop="32dp"
+                android:textSize="24sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="#B5B9D1"
                 android:id="@+id/welcome_text_name"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nuevo Reporte"
+                android:text="Agregar datos de usuario"
                 android:layout_margin="32dp"
                 android:textColor="@color/colorPrimary"
-                android:background="@color/colorAccent"/>
+                android:background="@color/colorAccent"
+                android:onClick="extraData"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reporte de terceros"
+                android:text="Nuevo Reporte"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="32dp"
                 android:textColor="@color/colorAccent"
+                android:onClick="onNewReportClick"
                 android:background="?selectableItemBackground"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

@@ -5,4 +5,5 @@
     <color name="colorAccent">#F7952B</color>
 
     <color name="buttonTextColor">#657381</color>
+    <color name="separatorGray">#dddddd</color>
 </resources>
