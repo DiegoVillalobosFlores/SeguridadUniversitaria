@@ -53,7 +53,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:textColor="@color/colorAccent"
-                android:onClick="onNewReportClick"
+                android:onClick="newReport"
                 android:background="?selectableItemBackground"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

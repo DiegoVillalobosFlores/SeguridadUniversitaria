@@ -6,11 +6,13 @@ import java.io.Serializable
  * Created by deimi on 2/8/2018.
  */
 
-data class Usuario(val estatus: String = "",
-                   val codigo: String = "",
-                   val name: String = "",
-                   val centro: String = "",
-                   val carrera: String = "",
-                   val telCasa: String = "",
-                   val telCel: String = "",
-                   val email: String = "") : Serializable
+data class Usuario(var estatus: String = "",
+                   var codigo: String = "",
+                   var name: String = "",
+                   var centro: String = "",
+                   var carrera: String = "",
+                   var institution: String = "",
+                   var telCasa: String = "",
+                   var telCel: String = "",
+                   var email: String = "",
+                   var gender: String = "") : Serializable
