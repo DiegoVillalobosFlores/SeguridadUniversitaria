@@ -78,4 +78,25 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_maps">Map</string>
+
+    <string-array name="hair_color">
+        <item>Castaño</item>
+        <item>Negro</item>
+        <item>Rubio</item>
+        <item>Pelirojo</item>
+    </string-array>
+
+    <string-array name="hair_type">
+        <item>Largo</item>
+        <item>Corto</item>
+        <item>Calvo</item>
+        <item>Rizado</item>
+    </string-array>
+
+    <string-array name="ojos_color">
+        <item>Marron</item>
+        <item>Verde</item>
+        <item>Azul</item>
+    </string-array>
+
 </resources>
