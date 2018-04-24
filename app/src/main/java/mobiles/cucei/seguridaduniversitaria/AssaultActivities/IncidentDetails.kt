@@ -47,7 +47,6 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
