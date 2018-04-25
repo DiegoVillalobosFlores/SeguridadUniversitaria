@@ -39,9 +39,9 @@ class LoginActivity : AppCompatActivity() {
                     val intent = Intent(this,MainActivity::class.java)
                     intent.putExtra("user",user as Serializable)
                     startActivity(intent)
+                }else{
+                    login_text_error.visibility = View.VISIBLE
                 }
-
-                login_text_error.visibility = View.VISIBLE
                 login_progress_loadinglogin.visibility = View.GONE
                 login_layout_linear_loginform.visibility = View.VISIBLE
             }

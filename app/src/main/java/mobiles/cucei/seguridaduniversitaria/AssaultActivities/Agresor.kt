@@ -19,7 +19,12 @@ class Agresor : AdapterView.OnItemSelectedListener, AppCompatActivity() {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        Log.d("LEL","LEL")
+        when(parent){
+            agresor_spinner_cabello_color -> Log.d("LEL","CABELLO")
+            agresor_spinner_cabello_tipo -> Log.d("LEL","CABELLOTIPO")
+            agresor_spinner_ojos_color -> Log.d("LEL","OJOS")
+            else -> Log.d("LEL",parent?.id.toString())
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,7 +3,6 @@
     package="mobiles.cucei.seguridaduniversitaria">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -35,6 +34,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".AssaultActivities.VictimDetails" />
         <activity android:name=".AssaultActivities.IncidentDetails" />
+        <activity android:name=".AssaultActivities.IncidentDetailsType"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

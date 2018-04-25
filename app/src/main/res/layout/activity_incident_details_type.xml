@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AssaultActivities.IncidentDetailsType">
+    android:layout_height="match_parent">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,24 +19,28 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_margin="16dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:animateLayoutChanges="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_margin="8dp">
+                        android:baselineAligned="false">
                         <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical"
+                            android:padding="8dp"
                             android:id="@+id/incident_type_layout_agression"
-                            android:background="?android:selectable"
+                            android:background="?selectableItemBackground"
                             android:onClick="onTypeClicked">
                             <ImageView
                                 android:layout_width="80dp"
@@ -48,13 +52,16 @@
                                 android:layout_height="wrap_content"
                                 android:text="Agresión"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_agression"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:padding="8dp"
+                            android:background="?selectableItemBackground"
                             android:id="@+id/incident_type_layout_kidnapping"
                             android:onClick="onTypeClicked">
                             <ImageView
@@ -68,6 +75,7 @@
                                 android:text="Intento de\n secuestro"
                                 android:textAlignment="center"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_kidnapping"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
@@ -75,7 +83,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:padding="8dp"
+                            android:background="?selectableItemBackground"
                             android:id="@+id/incident_type_layout_rob_gun"
                             android:onClick="onTypeClicked">
                             <ImageView
@@ -89,6 +98,7 @@
                                 android:text="Robo con arma de fuego"
                                 android:textAlignment="center"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_rob_gun"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -96,13 +106,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_margin="8dp">
+                        android:baselineAligned="false">
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:padding="8dp"
+                            android:background="?selectableItemBackground"
                             android:id="@+id/incident_type_layout_rob_knife"
                             android:onClick="onTypeClicked">
                             <ImageView
@@ -116,13 +127,16 @@
                                 android:text="Robo con arma blanca"
                                 android:layout_marginTop="8dp"
                                 android:textAlignment="center"
+                                android:id="@+id/incident_details_text_rob_knife"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:background="?selectableItemBackground"
                             android:id="@+id/incident_type_layout_extortion"
                             android:onClick="onTypeClicked">
                             <ImageView
@@ -136,6 +150,7 @@
                                 android:text="Extorsión"
                                 android:textAlignment="center"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_extortion"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
@@ -143,8 +158,9 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:background="?selectableItemBackground"
                             android:layout_gravity="center"
+                            android:padding="8dp"
                             android:id="@+id/incident_type_layout_rape"
                             android:onClick="onTypeClicked">
                             <ImageView
@@ -158,6 +174,7 @@
                                 android:text="Tentativa de violación"
                                 android:textAlignment="center"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_rape"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -165,13 +182,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_margin="8dp">
+                        android:baselineAligned="false">
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:padding="8dp"
+                            android:background="?selectableItemBackground"
                             android:id="@+id/incident_type_layout_creep"
                             android:onClick="onTypeClicked">
                             <ImageView
@@ -184,13 +202,16 @@
                                 android:layout_height="wrap_content"
                                 android:text="Acoso"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_creep"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:background="?selectableItemBackground"
                             android:id="@+id/incident_type_layout_kush"
                             android:onClick="onTypeClicked">
                             <ImageView
@@ -204,6 +225,7 @@
                                 android:text="Drogadicción"
                                 android:textAlignment="center"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_kush"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
@@ -211,7 +233,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:background="?android:selectable"
+                            android:padding="8dp"
+                            android:background="?selectableItemBackground"
                             android:layout_gravity="center"
                             android:id="@+id/incident_type_layout_other"
                             android:onClick="onTypeClicked" >
@@ -226,6 +249,7 @@
                                 android:text="Otro"
                                 android:textAlignment="center"
                                 android:layout_marginTop="8dp"
+                                android:id="@+id/incident_details_text_other"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
 
@@ -248,6 +272,19 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Descripción del suceso"
+                    android:imeOptions="actionDone"
+                    android:id="@+id/incident_details_edit_text_description"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
