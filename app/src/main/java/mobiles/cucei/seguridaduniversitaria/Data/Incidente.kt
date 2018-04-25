@@ -12,4 +12,5 @@ data class Incidente (var local : Boolean = false,
                       var type:String = "",
                       var description:String = "",
                       var escapeMethod:String = "",
-                      var suspects:ArrayList<Atracante> = ArrayList()) : Serializable
+                      var escapeDetails:String = "",
+                      var detained:Int = 0 ): Serializable

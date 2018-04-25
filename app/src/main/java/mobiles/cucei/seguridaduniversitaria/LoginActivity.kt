@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import com.github.kittinunf.fuel.Fuel
 import kotlinx.android.synthetic.main.activity_login.*
+import mobiles.cucei.seguridaduniversitaria.AssaultActivities.VictimDetails
 import mobiles.cucei.seguridaduniversitaria.Data.Usuario
 import java.io.Serializable
 
@@ -36,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
                     Log.d("USER",user.toString())
 
-                    val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this,VictimDetails  ::class.java)
                     intent.putExtra("user",user as Serializable)
                     startActivity(intent)
                 }else{

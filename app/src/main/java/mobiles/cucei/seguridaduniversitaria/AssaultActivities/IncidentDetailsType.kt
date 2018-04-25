@@ -1,7 +1,6 @@
 package mobiles.cucei.seguridaduniversitaria.AssaultActivities
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
@@ -44,6 +43,7 @@ class IncidentDetailsType : AppCompatActivity() {
             incident_type_layout_creep -> selectType("Acoso",incident_details_text_creep)
             incident_type_layout_kush -> selectType("Drogadicción",incident_details_text_kush)
             incident_type_layout_other -> {
+                incident.type = "Otro"
                 if(incident_type_layout_text_other.visibility == View.VISIBLE){
                     incident_type_layout_text_other.visibility = View.GONE
                 }else{

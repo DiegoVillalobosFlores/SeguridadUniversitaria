@@ -34,7 +34,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".AssaultActivities.VictimDetails" />
         <activity android:name=".AssaultActivities.IncidentDetails" />
-        <activity android:name=".AssaultActivities.IncidentDetailsType"/>
+        <activity android:name=".AssaultActivities.IncidentDetailsType" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -48,6 +48,10 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".AssaultActivities.Agresor" />
+        <activity android:name=".AssaultActivities.MediaFilacion" />
+        <activity android:name=".AssaultActivities.Especificaciones" />
+        <activity android:name=".AssaultActivities.Escape" />
+        <activity android:name=".AssaultActivities.Final"></activity>
     </application>
 
 </manifest>
