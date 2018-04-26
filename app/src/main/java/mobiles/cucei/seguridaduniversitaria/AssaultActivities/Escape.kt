@@ -45,7 +45,7 @@ class Escape : AppCompatActivity() {
     }
 
     fun setTransportType(type:String,textView: TextView){
-        incident.escapeMethod = type
+        incident.MedioHuida = type
         lastSelected.textColor = ContextCompat.getColor(this,android.R.color.tab_indicator_text)
         textView.textColor = ContextCompat.getColor(this,R.color.colorAccent)
         lastSelected = textView

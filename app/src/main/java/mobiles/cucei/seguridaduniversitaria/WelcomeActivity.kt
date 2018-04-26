@@ -17,7 +17,7 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
         user = intent.getSerializableExtra("user") as Usuario
-        welcome_text_name.text = user.name
+        welcome_text_name.text = user.Nombre
     }
 
     fun newReport(view:View){

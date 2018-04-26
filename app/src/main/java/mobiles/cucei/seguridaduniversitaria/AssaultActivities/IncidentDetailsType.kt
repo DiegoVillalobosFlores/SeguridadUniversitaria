@@ -61,7 +61,7 @@ class IncidentDetailsType : AppCompatActivity() {
     }
 
     fun onNext(view: View){
-        incident.description = incident_details_edit_text_description.text.toString()
+        incident.Descripcion = incident_details_edit_text_description.text.toString()
         val intent = Intent(this,Agresor::class.java)
         intent.putExtra("user",user)
         intent.putExtra("incident",incident)

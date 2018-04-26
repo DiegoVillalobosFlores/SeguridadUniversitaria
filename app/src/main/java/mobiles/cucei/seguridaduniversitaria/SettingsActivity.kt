@@ -21,8 +21,8 @@ class SettingsActivity : AppCompatActivity() {
 
         user = intent.getSerializableExtra("user") as Usuario
 
-        settings_text_name.text = user.name
-        settings_text_campus.text = user.centro
+        settings_text_name.text = user.Nombre
+        settings_text_campus.text = user.Sede
         settings_text_career.text = user.carrera
 
     }

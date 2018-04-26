@@ -84,7 +84,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Piercing"
                         android:inputType="text"
-                        android:imeOptions="actionNext"
+                        android:imeOptions="actionDone"
                         android:id="@+id/especificaciones_text_piercing"/>
                 </android.support.design.widget.TextInputLayout>
 

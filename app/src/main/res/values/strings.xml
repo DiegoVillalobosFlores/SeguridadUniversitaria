@@ -101,4 +101,22 @@
         <item>Azul</item>
     </string-array>
 
+    <string-array name="cus">
+        <item>CUCEI</item>
+        <item>CUCEA</item>
+        <item>CUAAD</item>
+        <item>CUCBA</item>
+        <item>CUCS</item>
+        <item>CUCSH</item>
+        <item>CUALTOS</item>
+        <item>CUCIENEGA</item>
+        <item>CUCOSTA</item>
+        <item>CUCSUR</item>
+        <item>CULAGOS</item>
+        <item>CUNORTE</item>
+        <item>CUSUR</item>
+        <item>CUTONALA</item>
+        <item>CUVALLES</item>
+    </string-array>
+
 </resources>

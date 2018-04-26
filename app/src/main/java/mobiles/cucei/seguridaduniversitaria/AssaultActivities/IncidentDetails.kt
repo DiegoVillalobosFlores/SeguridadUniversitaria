@@ -20,6 +20,8 @@ import kotlinx.android.synthetic.main.section_header.*
 import mobiles.cucei.seguridaduniversitaria.Data.Incidente
 import mobiles.cucei.seguridaduniversitaria.Data.Usuario
 import mobiles.cucei.seguridaduniversitaria.R
+import java.time.LocalDate
+import java.util.*
 
 class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
 
@@ -79,14 +81,14 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
     fun insideCenterToggle(view: View){
         val switch = view as Switch
         if (switch.isChecked){
-            incident.local = true
-            when(user.centro){
-                "CUCEI" -> setMarkerLocation(20.65533543427295,-103.32559246656251,user.centro)
-                "CUCEA" -> setMarkerLocation(20.740783427481432,-103.38087558746338,user.centro)
-                "CUAAD" -> setMarkerLocation(20.74060282394747,-103.31216812133789,user.centro)
-                "CUCSH" -> setMarkerLocation(20.693457935368478,-103.35012674331665,user.centro)
-                "CUCBA" -> setMarkerLocation(20.74596063711394,-103.51288318634033,user.centro)
-                "CUCS" -> setMarkerLocation(20.685789734395968,-103.33175897598267,user.centro)
+            incident.EsInterno = true
+            when(user.Sede){
+                "CUCEI" -> setMarkerLocation(20.65533543427295,-103.32559246656251,user.Sede)
+                "CUCEA" -> setMarkerLocation(20.740783427481432,-103.38087558746338,user.Sede)
+                "CUAAD" -> setMarkerLocation(20.74060282394747,-103.31216812133789,user.Sede)
+                "CUCSH" -> setMarkerLocation(20.693457935368478,-103.35012674331665,user.Sede)
+                "CUCBA" -> setMarkerLocation(20.74596063711394,-103.51288318634033,user.Sede)
+                "CUCS" -> setMarkerLocation(20.685789734395968,-103.33175897598267,user.Sede)
             }
         }else{
             setMarkerLocation(gdl.latitude,gdl.longitude,"Guadalajara")
@@ -95,10 +97,12 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
     }
 
     fun onNext(view: View){
-        incident.city = incident_details_edit_text_locality.text.toString()
+        val date:Date = Date()
+        incident.Municipio = incident_details_edit_text_locality.text.toString()
         incident.location_description = incident_details_edit_text_place.text.toString()
+        incident.Fecha = date.toString()
         if (!incident_details_edit_text_victims_number.text.toString().isEmpty()){
-            incident.num_victims = incident_details_edit_text_victims_number.text.toString().toInt()
+            incident.NumeroAgraviados = incident_details_edit_text_victims_number.text.toString().toInt()
         }
 
         val intent = Intent(this,IncidentDetailsType::class.java)
@@ -109,10 +113,11 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
 
     private fun setMarkerLocation(lat:Double,lon:Double,title:String){
         val marker = LatLng(lat,lon)
-        incident.lat = lat
-        incident.lon = lon
+        incident.Latitude = lat
+        incident.Longitude = lon
         mMap.clear()
         mMap.addMarker(MarkerOptions().position(marker).title(title))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker,14f))
+        incident.Esinterno = "1"
     }
 }

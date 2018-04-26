@@ -32,11 +32,11 @@ class Especificaciones : AppCompatActivity() {
     }
 
     fun onNext(view: View){
-        agresor.ropa = especificaciones_text_ropa.text.toString()
-        agresor.gorra = especificaciones_text_gorra.text.toString()
-        agresor.cicatrices = especificaciones_text_cicatrices.text.toString()
-        agresor.tatuajes = especificaciones_text_tatuajes.text.toString()
-        agresor.piercing = especificaciones_text_piercing.text.toString()
+        agresor.TipoRopaAgresor = especificaciones_text_ropa.text.toString()
+        agresor.UsoGorraAgresor = especificaciones_text_gorra.text.toString()
+        agresor.CicatricesAgresor = especificaciones_text_cicatrices.text.toString()
+        agresor.TatuajesAgresor = especificaciones_text_tatuajes.text.toString()
+        agresor.PercingAgresor = especificaciones_text_piercing.text.toString()
 
         val intent = Intent(this,Escape::class.java)
         intent.putExtra("user",user)

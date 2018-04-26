@@ -67,11 +67,13 @@ class Agresor : AdapterView.OnItemSelectedListener, AppCompatActivity() {
 
     fun onNext(view: View){
 
-        agresor.estatura = agresor_edit_text_estatura.text.toString()
-        agresor.edad = agresor_edit_text_edad.text.toString()
-        agresor.senas = agresor_edit_text_senas_particulares.text.toString()
-        agresor.boca = agresor_text_edit_boca.text.toString()
-        agresor.tez = agresor_edit_text_tez.text.toString()
+        agresor.EstaturaAgresor = agresor_edit_text_estatura.text.toString()
+        agresor.EdadAproxAgresor = agresor_edit_text_edad.text.toString()
+        agresor.OtraSenaAgresor = agresor_edit_text_senas_particulares.text.toString()
+        agresor.BocaAgresor = agresor_text_edit_boca.text.toString()
+        agresor.TezAgresor = agresor_edit_text_tez.text.toString()
+        agresor.OjosAgresor = agresor.ojosColor
+        agresor.CabelloAgresor = agresor.cabelloTipo + " " + agresor.cabelloColor
 
         val intent = Intent(this,MediaFilacion::class.java)
         intent.putExtra("user",user)
