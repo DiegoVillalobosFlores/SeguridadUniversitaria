@@ -7,19 +7,26 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.Switch
+import android.widget.Toast
+import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.httpGet
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_incident_details.*
 import kotlinx.android.synthetic.main.section_header.*
 import mobiles.cucei.seguridaduniversitaria.Data.Incidente
 import mobiles.cucei.seguridaduniversitaria.Data.Usuario
 import mobiles.cucei.seguridaduniversitaria.R
+import org.json.JSONObject
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*
 
@@ -35,6 +42,7 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
     private var user:Usuario = Usuario()
     private val gdl = LatLng(20.659699, -103.349609)
     private var incident:Incidente = Incidente()
+    private var rightNow:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +52,7 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
         section_header_image_header.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_assignment_black_24dp))
 
         user = intent.getSerializableExtra("user") as Usuario
+        rightNow = intent.getBooleanExtra("rn",false)
 
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -97,7 +106,8 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
     }
 
     fun onNext(view: View){
-        val date:Date = Date()
+        val sdf = SimpleDateFormat("yyyy-M-d HH:mm:ss", Locale("es","MX"))
+        val date = sdf.format(Date())
         incident.Municipio = incident_details_edit_text_locality.text.toString()
         incident.location_description = incident_details_edit_text_place.text.toString()
         incident.Fecha = date.toString()
@@ -108,6 +118,7 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
         val intent = Intent(this,IncidentDetailsType::class.java)
         intent.putExtra("user",user)
         intent.putExtra("incident",incident)
+        intent.putExtra("rn",rightNow)
         startActivity(intent)
     }
 

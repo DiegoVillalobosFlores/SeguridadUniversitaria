@@ -16,6 +16,7 @@ import java.io.Serializable
 class VictimDetails : AppCompatActivity() {
 
     var user:Usuario = Usuario()
+    private var rightNow:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +82,11 @@ class VictimDetails : AppCompatActivity() {
         victim_details_fab_next.visibility = View.VISIBLE
     }
 
+    fun onOcurredRightNow(v:View){
+        val switch = v as Switch
+        rightNow = switch.isChecked
+    }
+
     fun onNext(view: View){
         user.Nombre = victim_details_edit_text_name.text.toString()
         user.institution = victim_details_edit_text_institution.text.toString()
@@ -92,6 +98,7 @@ class VictimDetails : AppCompatActivity() {
 
         val intent = Intent(this, IncidentDetails::class.java)
         intent.putExtra("user",user as Serializable)
+        intent.putExtra("rn",rightNow)
         startActivity(intent)
     }
 
