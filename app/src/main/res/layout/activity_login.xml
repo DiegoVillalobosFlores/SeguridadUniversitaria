@@ -30,6 +30,16 @@
             android:textColor="@color/Crimson"
             android:id="@+id/login_text_error"
             android:visibility="gone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="La aplicación necesita de internet para funcionar, por favor conectese a una red con internet antes de continuar"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/Crimson"
+            android:id="@+id/login_text_error_no_network"
+            android:visibility="gone"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,6 +91,26 @@
             android:id="@+id/login_progress_loadinglogin"
             android:layout_marginTop="16dp"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayuda"
+            android:onClick="onHelpClick"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:onClick="onAboutClick"
+            android:text="Acerca de"/>
     </LinearLayout>
 
 </FrameLayout>
