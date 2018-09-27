@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AssaultActivities.Especificaciones">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/section_header"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contesta solo si detectaste alguna de las siguientes especificaciones"
+                android:textAlignment="center"
+                android:layout_margin="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Tipo de ropa"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:id="@+id/especificaciones_text_ropa"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Tipo de gorra"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:id="@+id/especificaciones_text_gorra"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Cicatrices"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:id="@+id/especificaciones_text_cicatrices"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Tatuajes"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:id="@+id/especificaciones_text_tatuajes"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Piercing"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        android:id="@+id/especificaciones_text_piercing"/>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
+        android:tint="#fff"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:visibility="visible"
+        android:onClick="onNext"
+        android:id="@+id/victim_details_fab_next"/>
+
+</android.support.design.widget.CoordinatorLayout>

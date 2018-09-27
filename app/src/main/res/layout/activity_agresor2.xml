@@ -159,6 +159,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:visibility="visible"
+        android:onClick="onNext"
         android:id="@+id/victim_details_fab_next"/>
 
 </android.support.design.widget.CoordinatorLayout>

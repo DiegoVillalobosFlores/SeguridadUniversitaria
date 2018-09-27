@@ -3,6 +3,8 @@
 
     <string name="API">http://148.202.152.33/</string>
     <string name="API_Login">ws_general.php</string>
+    <string name="API_Insert">incidencias/incidencias_insert.php</string>
+    <string name="API_Push_Message">incidencias/push_mensaje.php</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
@@ -97,6 +99,24 @@
         <item>Marron</item>
         <item>Verde</item>
         <item>Azul</item>
+    </string-array>
+
+    <string-array name="cus">
+        <item>CUCEI</item>
+        <item>CUCEA</item>
+        <item>CUAAD</item>
+        <item>CUCBA</item>
+        <item>CUCS</item>
+        <item>CUCSH</item>
+        <item>CUALTOS</item>
+        <item>CUCIENEGA</item>
+        <item>CUCOSTA</item>
+        <item>CUCSUR</item>
+        <item>CULAGOS</item>
+        <item>CUNORTE</item>
+        <item>CUSUR</item>
+        <item>CUTONALA</item>
+        <item>CUVALLES</item>
     </string-array>
 
 </resources>

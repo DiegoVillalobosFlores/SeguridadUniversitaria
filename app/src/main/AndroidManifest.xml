@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -36,6 +35,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".AssaultActivities.VictimDetails" />
         <activity android:name=".AssaultActivities.IncidentDetails" />
+        <activity android:name=".AssaultActivities.IncidentDetailsType" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -51,6 +51,10 @@
         <activity android:name=".HelpActivity" />
         <activity android:name=".AboutActivity"></activity>
         <activity android:name=".AssaultActivities.Agresor" />
+        <activity android:name=".AssaultActivities.MediaFilacion" />
+        <activity android:name=".AssaultActivities.Especificaciones" />
+        <activity android:name=".AssaultActivities.Escape" />
+        <activity android:name=".AssaultActivities.Final"></activity>
     </application>
 
 </manifest>

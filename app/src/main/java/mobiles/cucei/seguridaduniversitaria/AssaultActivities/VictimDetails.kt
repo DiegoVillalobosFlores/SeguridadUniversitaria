@@ -16,6 +16,7 @@ import java.io.Serializable
 class VictimDetails : AppCompatActivity() {
 
     var user:Usuario = Usuario()
+    private var rightNow:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,14 +27,23 @@ class VictimDetails : AppCompatActivity() {
 
         user = intent.getSerializableExtra("user") as Usuario
 
+        val centros = resources.getStringArray(R.array.cus)
+        if(!centros.contains(user.Sede)){
+            user.EsCentroUniversitario = "0"
+            user.EsPreparatoria = "1"
+        }
+
     }
 
     fun onVictimSelfClick(view: View){
         val switch: Switch = view as Switch
         if(switch.isChecked){
-            victim_details_edit_text_name.setText(user.name)
-            victim_details_edit_text_institution.setText("Universidad de Guadalajara")
-            victim_details_edit_text_campus.setText(user.centro)
+            victim_details_edit_text_name.setText(user.Nombre)
+            victim_details_edit_text_institution.setText("Universidad")
+            if(user.EsCentroUniversitario == "0"){
+                victim_details_edit_text_institution.setText("Preparatoria")
+            }
+            victim_details_edit_text_campus.setText(user.Sede)
             victim_details_edit_text_career.setText(user.carrera)
         }else{
             victim_details_edit_text_name.setText("")
@@ -66,23 +76,29 @@ class VictimDetails : AppCompatActivity() {
         if (victim_details_edit_text_phone_cel.text.isEmpty()){
             return
         }
-        if (user.gender.isEmpty()){
+        if (user.Sexo.isEmpty()){
             return
         }
         victim_details_fab_next.visibility = View.VISIBLE
     }
 
+    fun onOcurredRightNow(v:View){
+        val switch = v as Switch
+        rightNow = switch.isChecked
+    }
+
     fun onNext(view: View){
-        user.name = victim_details_edit_text_name.text.toString()
+        user.Nombre = victim_details_edit_text_name.text.toString()
         user.institution = victim_details_edit_text_institution.text.toString()
-        user.centro = victim_details_edit_text_campus.text.toString()
+        user.Sede = victim_details_edit_text_campus.text.toString()
         user.carrera = victim_details_edit_text_career.text.toString()
-        user.email = victim_details_edit_text_email.text.toString()
-        user.telCasa = victim_details_edit_text_phone_home.text.toString()
-        user.telCel = victim_details_edit_text_phone_cel.text.toString()
+        user.Email = victim_details_edit_text_email.text.toString()
+        user.Telefono = victim_details_edit_text_phone_home.text.toString()
+        user.Celular = victim_details_edit_text_phone_cel.text.toString()
 
         val intent = Intent(this, IncidentDetails::class.java)
         intent.putExtra("user",user as Serializable)
+        intent.putExtra("rn",rightNow)
         startActivity(intent)
     }
 
@@ -90,9 +106,9 @@ class VictimDetails : AppCompatActivity() {
         val checked = (view as RadioButton).isChecked
 
         when(view){
-            victim_details_radio_man -> if(checked) user.gender = "Hombre"
-            victim_details_radio_woman -> if(checked) user.gender = "Mujer"
-            victim_details_radio_other -> if(checked) user.gender = "Otro"
+            victim_details_radio_man -> if(checked) user.Sexo = "Hombre"
+            victim_details_radio_woman -> if(checked) user.Sexo = "Mujer"
+            victim_details_radio_other -> if(checked) user.Sexo = "Otro"
         }
     }
 }

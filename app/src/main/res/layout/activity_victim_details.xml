@@ -31,6 +31,23 @@
                     android:layout_height="wrap_content"
                     android:onClick="onVictimSelfClick"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sucedió en este momento"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onOcurredRightNow"/>
+            </LinearLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
