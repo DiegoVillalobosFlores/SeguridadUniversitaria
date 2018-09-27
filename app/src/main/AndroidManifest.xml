@@ -50,6 +50,7 @@
 
         <activity android:name=".HelpActivity" />
         <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AssaultActivities.Agresor" />
     </application>
 
 </manifest>

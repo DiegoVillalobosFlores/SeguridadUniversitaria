@@ -102,7 +102,7 @@ class IncidentDetails : AppCompatActivity(), OnMapReadyCallback {
             incident.num_victims = incident_details_edit_text_victims_number.text.toString().toInt()
         }
 
-        val intent = Intent(this,IncidentDetailsType::class.java)
+        val intent = Intent(this,Agresor::class.java)
         intent.putExtra("user",user)
         intent.putExtra("incident",incident)
         startActivity(intent)
