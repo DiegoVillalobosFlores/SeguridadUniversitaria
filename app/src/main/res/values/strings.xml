@@ -1,13 +1,16 @@
 <resources>
     <string name="app_name">Seguridad Universitaria</string>
+    <string name="title_activity_settings">Settings</string>
 
+    <!-- API Strings -->
     <string name="API">http://148.202.152.33/</string>
     <string name="API_Login">ws_general.php</string>
     <string name="API_Insert">incidencias/incidencias_insert.php</string>
     <string name="API_Push_Message">incidencias/push_mensaje.php</string>
-    <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
+    <string name="code">Code</string>
+    <string name="nip">NIP</string>
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>

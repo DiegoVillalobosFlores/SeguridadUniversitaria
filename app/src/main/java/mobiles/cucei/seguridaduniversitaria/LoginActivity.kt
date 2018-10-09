@@ -2,6 +2,7 @@ package mobiles.cucei.seguridaduniversitaria
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
@@ -12,21 +13,32 @@ import com.github.kittinunf.fuel.Fuel
 import kotlinx.android.synthetic.main.activity_login.*
 import mobiles.cucei.seguridaduniversitaria.AssaultActivities.VictimDetails
 import mobiles.cucei.seguridaduniversitaria.Data.Usuario
+import mobiles.cucei.seguridaduniversitaria.R.id.login_button_login
+import org.jetbrains.anko.share
 import java.io.Serializable
 
 
 
 class LoginActivity : AppCompatActivity() {
 
+
+    private lateinit var sharedPref:SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        sharedPref = getPreferences(Context.MODE_PRIVATE)
+        val code = sharedPref.getString(getString(R.string.code),"")
+        val nip = sharedPref.getString(getString(R.string.nip),"")
+        login_textinput_codigo.setText(code)
+        login_textinput_nip.setText(nip)
         handleNoInternet()
 
         login_button_login.setOnClickListener {
             handleNoInternet()
         }
+
     }
 
     private fun handleNoInternet(){
@@ -64,10 +76,18 @@ class LoginActivity : AppCompatActivity() {
                 val user = Usuario(res[0],res[1],res[2].toLowerCase().capitalize(),res[3],deleteUnwantedChars(res[4]))
 
                 Log.d("USER",user.toString())
+                with (sharedPref.edit()) {
+                    putString(getString(R.string.code), codigo)
+                    putString(getString(R.string.nip), nip)
+                    commit()
+                }
 
                 val intent = Intent(this,VictimDetails::class.java)
                 intent.putExtra("user",user as Serializable)
                 startActivity(intent)
+
+                login_progress_loadinglogin.visibility = View.GONE
+                login_layout_linear_loginform.visibility = View.VISIBLE
             }else{
                 login_text_error.visibility = View.VISIBLE
                 login_progress_loadinglogin.visibility = View.GONE
